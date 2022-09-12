@@ -20,7 +20,7 @@ class Navigation extends Component{
                 <Navbar dark color="dark" expand = "sm">
                     <div className="container">
                     <NavbarToggler onClick={this.navToggle}/>
-                        <NavbarBrand href="/">Hollywood Cafee</NavbarBrand>
+                        <NavbarBrand href="/" style={{fontSize: "50px", fontFamily: "fantasy"}}>Hollywood Cafee</NavbarBrand>
                         <Collapse isOpen = {this.state.isNavOpen} navbar>
                             <Nav className="mr-auto" navbar>
                                 <NavItem>
