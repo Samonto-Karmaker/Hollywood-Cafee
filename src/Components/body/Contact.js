@@ -16,11 +16,11 @@ class Contact extends Component{
     render(){
         return(
             <div className="container">
-                <div className="row row-content">
+                <div className="row row-content" style = {{paddingLeft: "20px", textAlign: "left"}}>
                     <div className="col-12">
                         <h3>Send Us Your Feedback</h3>
                     </div>
-                    <div className="col-12">
+                    <div className="col-12 col-md-7">
                         <Form>
                             <FormGroup row>
                                 <Label htmlFor="firstname" md = {2}>First Name: </Label>
@@ -46,8 +46,8 @@ class Contact extends Component{
                                     <Input type="email" name="email" placeholder="abc@xyz.com" value={this.state.email} />
                                 </Col>
                             </FormGroup>
-                            <FormGroup>
-                                <Col md= {{size: 15, offset: 1}}>
+                            <FormGroup row>
+                                <Col md= {{size: 6, offset: 2}}>
                                     <FormGroup check>
                                         <Label check>
                                             <Input type = "checkbox" name="agree" checked={this.state.agree} />
