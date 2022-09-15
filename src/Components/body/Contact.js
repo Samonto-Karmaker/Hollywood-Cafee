@@ -37,6 +37,7 @@ class Contact extends Component{
     }
 
     render(){
+        document.title = "Contact"
         return(
             <div className="container">
                 <div className="row row-content" style = {{paddingLeft: "20px", textAlign: "left"}}>
