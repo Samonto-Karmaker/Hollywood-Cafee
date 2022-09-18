@@ -1,12 +1,17 @@
 import React, {Component} from "react";
-import DISHES from "../../data/dishes"
 import MenuItem from "./MenuItem";
 import DishDetails from "./DishDetails";
 import {CardColumns, Modal, ModalBody, ModalFooter, Button} from "reactstrap"
+import {connect} from "react-redux"
+
+const mapStatetoProps = state => {
+    return{
+        dishes: state.dishes
+    }
+}
 
 class Menu extends Component{
     state = {
-        dishes: DISHES,
         selectedDish: null,
         modalOpen: false
     }
@@ -26,7 +31,7 @@ class Menu extends Component{
 
     render(){
         document.title = "Menu"
-        const menu = this.state.dishes.map(item => {
+        const menu = this.props.dishes.map(item => {
             return(
                 <MenuItem 
                     dish = {item} 
@@ -60,4 +65,4 @@ class Menu extends Component{
     }
 }
 
-export default Menu
+export default connect(mapStatetoProps)(Menu)
