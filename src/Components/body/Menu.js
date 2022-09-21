@@ -3,7 +3,7 @@ import MenuItem from "./MenuItem";
 import DishDetails from "./DishDetails";
 import {CardColumns, Modal, ModalBody, ModalFooter, Button} from "reactstrap"
 import {connect} from "react-redux"
-import * as actionTypes from "../../redux/actionTypes"
+import { newComment } from "../../redux/actions";
 
 const mapStatetoProps = state => {
     return{
@@ -13,15 +13,9 @@ const mapStatetoProps = state => {
 
 const mapDispatchtoProps = dispatch =>{
     return{
-        newComment: (dishId, rating, author, comment) => dispatch({
-            type: actionTypes.ADD_COMMENT,
-            payload: {
-                dishId: dishId,
-                author: author,
-                rating: rating,
-                comment: comment
-            }
-        })
+        newComment: (dishId, rating, author, comment) => dispatch(
+            newComment(dishId, rating, author, comment)
+        )
     }
 }
 
