@@ -10,6 +10,21 @@ const mapStatetoProps = state => {
     }
 }
 
+const mapDispatchtoProps = dispatch =>{
+    return{
+        newComment: (dishId, rating, author, comment) => dispatch({
+            type: "ADD_COMMENT",
+            payload: {
+                dishId: dishId,
+                author: author,
+                rating: rating,
+                comment: comment
+            }
+        })
+    }
+}
+
+
 class Menu extends Component{
     state = {
         selectedDish: null,
@@ -42,7 +57,7 @@ class Menu extends Component{
 
         let details = null
         if(this.state.selectedDish != null){
-            details = <DishDetails dish = {this.state.selectedDish} />
+            details = <DishDetails dish = {this.state.selectedDish} newComment={this.props.newComment}/>
         }
 
         return(
@@ -65,4 +80,4 @@ class Menu extends Component{
     }
 }
 
-export default connect(mapStatetoProps)(Menu)
+export default connect(mapStatetoProps, mapDispatchtoProps)(Menu)

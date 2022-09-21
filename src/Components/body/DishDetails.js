@@ -27,7 +27,7 @@ const DishDetails = props => {
                     <hr/>
                     <LoadComments comments = {props.dish.comments} />
                     <hr/>
-                    <CommentForm dishId={props.dish.id} />
+                    <CommentForm dishId={props.dish.id} newComment={props.newComment}/>
                 </CardBody>
             </Card>
         </div>
