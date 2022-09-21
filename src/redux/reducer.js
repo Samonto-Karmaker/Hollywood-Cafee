@@ -1,11 +1,12 @@
 import DISHES from "../data/dishes"
+import * as actionTypes from "./actionTypes"
 
 const initialState = {
     dishes: DISHES
 }
 
 export const Reducer = (state = initialState, action) => {
-    if(action.type === "ADD_COMMENT"){
+    if(action.type === actionTypes.ADD_COMMENT){
         let comment = action.payload
         comment.id = state.dishes[comment.dishId].comments.length
         comment.date = new Date().toDateString()
