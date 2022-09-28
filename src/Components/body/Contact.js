@@ -54,7 +54,8 @@ class Contact extends Component{
                                         name="firstname" 
                                         placeholder="First Name" 
                                         value={this.state.firstname} 
-                                        onChange={this.handleInput} 
+                                        onChange={this.handleInput}
+                                        required 
                                     />
                                 </Col>
                             </FormGroup>
@@ -66,7 +67,8 @@ class Contact extends Component{
                                         name="lastname" 
                                         placeholder="Last Name" 
                                         value={this.state.lastname}
-                                        onChange={this.handleInput} 
+                                        onChange={this.handleInput}
+                                        required 
                                     />
                                 </Col>
                             </FormGroup>
@@ -78,7 +80,8 @@ class Contact extends Component{
                                         name="telnum" 
                                         placeholder="Tel. No." 
                                         value={this.state.telnum}
-                                        onChange={this.handleInput} 
+                                        onChange={this.handleInput}
+                                        required 
                                     />
                                 </Col>
                             </FormGroup>
@@ -90,7 +93,8 @@ class Contact extends Component{
                                         name="email" 
                                         placeholder="abc@xyz.com" 
                                         value={this.state.email}
-                                        onChange={this.handleInput} 
+                                        onChange={this.handleInput}
+                                        required 
                                     />
                                 </Col>
                             </FormGroup>
@@ -114,6 +118,7 @@ class Contact extends Component{
                                         name="contactType" 
                                         value={this.state.contactType}
                                         onChange={this.handleInput}
+                                        required
                                     >
                                         <option>Tel.</option>
                                         <option>Email</option>
