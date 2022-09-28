@@ -1,11 +1,11 @@
-import DISHES from "../data/dishes"
 import * as actionTypes from "./actionTypes"
 
-const initialState = {
-    dishes: DISHES
+const initialDishState = {
+    isLoading: false,
+    dishes: []
 }
 
-export const Reducer = (state = initialState, action) => {
+export const Reducer = (state = initialDishState, action) => {
     if(action.type === actionTypes.ADD_COMMENT){
         let comment = action.payload
         comment.id = state.dishes[comment.dishId].comments.length
@@ -15,6 +15,20 @@ export const Reducer = (state = initialState, action) => {
         return{
             ...state,
             dishes: dummy
+        }
+    }
+    else if(action.type === actionTypes.DISHES_LOADING){
+        return{
+            ...state, 
+            isLoading: true,
+            dishes: []
+        }
+    }
+    else if(action.type === actionTypes.LOAD_DISHES){
+        return{
+            ...state,
+            isLoading: false,
+            dishes: action.payload
         }
     }
     return state
